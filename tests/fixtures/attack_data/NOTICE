@@ -1,0 +1,26 @@
+These files are from Splunk's attack_data (https://github.com/splunk/attack_data),
+under the Apache License 2.0 (LICENSE, in this directory), at commit
+4389fa7a4e74a7c083c0fbe448fa2c7c32378981 (Git LFS objects), renamed,
+otherwise unmodified (SHA-256):
+
+  pan_tor_allowed.log  3ed58a9d3ecb66194f4ec2e9154304d884e8c5b930d7909c107597e3fd51d93d
+    from datasets/attack_techniques/T1090.003/pan_tor_allowed/pan_tor_allowed.log
+  pan_large_icmp.log  79b4c41305fd2cedc9f50656885aafcd85efb2e9d09abe715b774299640f7c18
+    from datasets/attack_techniques/T1095/palologs/large_icmp.log
+  pan_threat_fortios_cve.log  0859a24067009985ce89e8b721b3641931b82f6937a6fb4720d17faf47f05f87
+    from datasets/attack_techniques/T1190/fortigate/fortinetcve202240684.log
+  pan_threat_vmware_scanning.log  ef88283f3fa3894065a08002053e5db74e4ccf1c39ef46300c15a6c8636df8a8
+    from datasets/attack_techniques/T1190/vmware/vmware_scanning_pan_threat.log
+  pan_screenconnect_threat.log  334bc81b0d840d53c44378ba5188a0081e6d2144d40185ac5e9d043fab1d5e5f
+    from datasets/attack_techniques/T1219/screenconnect/screenconnect_palo.log
+  pan_screenconnect_traffic.log  74227d27c3e789965613a6dc997c9a6374bd19a8b74193a3720bf0944ca5b0ca
+    from datasets/attack_techniques/T1219/screenconnect/screenconnect_palo_traffic.log
+  asa_generic.log  b42d51b1f09c7d447ebf3ca1c1a594a886bbf529b06a4300c9a5a58d191a2385
+    from datasets/cisco_asa/generic/cisco_asa_generic_logs.log
+  asa_arcane_door.log  8cf972ca97ab98b064a78b0b61a27d46d4b755f9dcd2c99ae96bf94a7400ced0
+    from datasets/cisco_asa/arcane_door/cisco_asa.log
+
+The pan_* files are PAN-OS TRAFFIC and THREAT logs as syslog lines (the
+one under fortigate/ is a PAN-OS THREAT log of an attempt on a FortiOS
+flaw); the screenconnect ones are framed with an octet count (RFC 6587).
+The asa_* files are Cisco ASA syslog lines.

@@ -1,0 +1,24 @@
+<166>Oct 30 2025 11:04:10: %ASA-6-302015: Built outbound UDP connection 8812 for outside:198.51.100.53/53 (198.51.100.53/53) to inside:192.0.2.20/53211 (203.0.113.1/53211)
+<166>Oct 30 2025 11:06:12: %ASA-6-302016: Teardown UDP connection 8812 for outside:198.51.100.53/53 to inside:192.0.2.20/53211 duration 0:02:02 bytes 312
+<166>Oct 30 2025 11:07:00 asa-edge-01 : %ASA-6-302013: Built outbound TCP connection 9001 for outside:198.51.100.200/443 (198.51.100.200/443) to inside:192.0.2.21/50100 (203.0.113.1/50100)
+<166>Oct 30 2025 11:07:31 asa-edge-01 : %ASA-6-302014: Teardown TCP connection 9001 for outside:198.51.100.200/443 to inside:192.0.2.21/50100 duration 0:00:31 bytes 48213 TCP FINs from inside
+<164>1 2025-10-30T11:10:02Z asa-edge-01 - - - - :2025-10-30T11:10:02Z: %ASA-4-106023: Deny tcp src outside:203.0.113.99/51515 dst inside:192.0.2.30/445 by access-group "outside_access_in" [0x0, 0x0]
+<164>1 2025-10-30T11:10:03Z asa-edge-01 - - - - :2025-10-30T11:10:03Z: %ASA-4-106023: Deny icmp src outside:203.0.113.99 dst inside:192.0.2.30 (type 8, code 0) by access-group "outside_access_in" [0x0, 0x0]
+<166>1 2025-10-30T11:10:05Z asa-edge-01 - - - - %ASA-6-106100: access-list outside_access_in denied tcp outside/203.0.113.99(51516) -> inside/192.0.2.30(3389) hit-cnt 1 first hit [0x91c26a3, 0x0]
+<166>1 2025-10-30T11:10:09Z asa-edge-01 - - - - %ASA-6-106100: access-list inside_access_out permitted udp inside/192.0.2.20(53212) -> outside/198.51.100.53(53) hit-cnt 4 300-second interval [0x5e1f0a2b, 0x0]
+Oct 30 11:10:12 asa-edge-01 %ASA-6-106015: Deny TCP (no connection) from 203.0.113.99/443 to 192.0.2.30/51517 flags RST  on interface outside
+2025-10-30T11:12:00+01:00 asa-edge-01 %ASA-6-113004: AAA user authentication Successful : server = 192.0.2.10 : user = alice
+Oct 30 2025 11:12:30: %ASA-6-113005: AAA user authentication Rejected : reason = AAA failure : server = 192.0.2.10 : user = ***** : user IP = 203.0.113.77
+Oct 30 2025 11:12:41: %ASA-6-113015: AAA user authentication Rejected : reason = Invalid password : local database : user = bob : user IP = 203.0.113.78
+:2025-10-30T11:20:00Z: %ASA-6-113039: Group <GP-Staff> User <alice> IP <198.51.100.23> AnyConnect parent session started.
+:2025-10-30T11:20:01Z: %ASA-6-722022: Group <GP-Staff> User <alice> IP <198.51.100.23> TCP SVC connection established without compression
+:2025-10-30T12:45:13Z: %ASA-6-722023: Group <GP-Staff> User <alice> IP <198.51.100.23> TCP SVC connection terminated without compression
+:2025-10-30T12:45:13Z: %ASA-5-722037: Group <GP-Staff> User <alice> IP <198.51.100.23> SVC closing connection: User Requested.
+:2025-10-30T13:00:02Z: %ASA-6-716001: Group <Clientless> User <carol> IP <198.51.100.40> WebVPN session started.
+:2025-10-30T13:30:44Z: %ASA-6-716002: Group <Clientless> User <carol> IP <198.51.100.40> WebVPN session terminated: User Requested.
+Oct 30 2025 14:01:09 asa-edge-01 : %ASA-6-605004: Login denied from 203.0.113.66/40022 to outside:192.0.2.1/ssh for user "root"
+Oct 30 2025 14:02:51 asa-edge-01 : %ASA-6-605005: Login permitted from 198.51.100.7/50322 to management:192.0.2.1/https for user "admin"
+Oct 30 2025 14:03:20 asa-edge-01 : %ASA-5-111010: User 'admin', running 'CLI' from IP 198.51.100.7, executed 'username backup password ***** privilege 15'
+Oct 30 2025 14:03:20 asa-edge-01 : %ASA-5-502101: New user added to local dbase: Uname: backup Priv: 15 Encpass: *****
+Oct 30 2025 14:09:58 asa-edge-01 : %ASA-5-611103: User logged out: Uname: admin
+Oct 30 2025 14:10:00 asa-edge-01 : %ASA-4-733100: [ Scanning] drop rate-1 exceeded. Current burst rate is 12 per second, max configured rate is 10; Current average rate is 9 per second, max configured rate is 5; Cumulative total count is 5432

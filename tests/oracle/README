@@ -1,0 +1,16 @@
+attack_data.tsv, written.tsv: the main values of every entry of the logs
+in tests/fixtures/attack_data/ (Splunk's open samples) and
+tests/fixtures/written/ (written for these tests), one line per entry: the
+file, the line, the vendor, the kind, the time, the action, source, source
+port, destination, destination port, protocol, user, application, rule,
+device and message. Written by gen.py, which reads the files with Python's
+own csv and re modules, after the vendors' documentation (PAN-OS 11.1's
+field orders, FortiOS's log keys, the ASA's message wording), with no code
+shared with this crate; see its header.
+
+Regenerate from the crate's root:
+
+  python3 -I tests/oracle/gen.py tests/fixtures/attack_data > tests/oracle/attack_data.tsv
+  python3 -I tests/oracle/gen.py tests/fixtures/written > tests/oracle/written.tsv
+
+tests/oracle.rs compares every entry with them.

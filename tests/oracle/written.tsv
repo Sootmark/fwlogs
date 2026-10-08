@@ -1,0 +1,50 @@
+asa-syslog.log	1	asa	302015	2025-10-30T11:04:10.0000000	built	192.0.2.20	53211	198.51.100.53	53	UDP					Built outbound UDP connection 8812 for outside:198.51.100.53/53 (198.51.100.53/53) to inside:192.0.2.20/53211 (203.0.113.1/53211)
+asa-syslog.log	2	asa	302016	2025-10-30T11:06:12.0000000	teardown					UDP					Teardown UDP connection 8812 for outside:198.51.100.53/53 to inside:192.0.2.20/53211 duration 0:02:02 bytes 312
+asa-syslog.log	3	asa	302013	2025-10-30T11:07:00.0000000	built	192.0.2.21	50100	198.51.100.200	443	TCP				asa-edge-01	Built outbound TCP connection 9001 for outside:198.51.100.200/443 (198.51.100.200/443) to inside:192.0.2.21/50100 (203.0.113.1/50100)
+asa-syslog.log	4	asa	302014	2025-10-30T11:07:31.0000000	teardown					TCP				asa-edge-01	Teardown TCP connection 9001 for outside:198.51.100.200/443 to inside:192.0.2.21/50100 duration 0:00:31 bytes 48213 TCP FINs from inside
+asa-syslog.log	5	asa	106023	2025-10-30T11:10:02.0000000Z	deny	203.0.113.99	51515	192.0.2.30	445	tcp			outside_access_in	asa-edge-01	Deny tcp src outside:203.0.113.99/51515 dst inside:192.0.2.30/445 by access-group "outside_access_in" [0x0, 0x0]
+asa-syslog.log	6	asa	106023	2025-10-30T11:10:03.0000000Z	deny	203.0.113.99		192.0.2.30		icmp			outside_access_in	asa-edge-01	Deny icmp src outside:203.0.113.99 dst inside:192.0.2.30 (type 8, code 0) by access-group "outside_access_in" [0x0, 0x0]
+asa-syslog.log	7	asa	106100	2025-10-30T11:10:05.0000000Z	denied	203.0.113.99	51516	192.0.2.30	3389	tcp			outside_access_in	asa-edge-01	access-list outside_access_in denied tcp outside/203.0.113.99(51516) -> inside/192.0.2.30(3389) hit-cnt 1 first hit [0x91c26a3, 0x0]
+asa-syslog.log	8	asa	106100	2025-10-30T11:10:09.0000000Z	permitted	192.0.2.20	53212	198.51.100.53	53	udp			inside_access_out	asa-edge-01	access-list inside_access_out permitted udp inside/192.0.2.20(53212) -> outside/198.51.100.53(53) hit-cnt 4 300-second interval [0x5e1f0a2b, 0x0]
+asa-syslog.log	9	asa	106015		deny	203.0.113.99	443	192.0.2.30	51517	TCP				asa-edge-01	Deny TCP (no connection) from 203.0.113.99/443 to 192.0.2.30/51517 flags RST  on interface outside
+asa-syslog.log	10	asa	113004	2025-10-30T10:12:00.0000000Z	successful						alice			asa-edge-01	AAA user authentication Successful : server = 192.0.2.10 : user = alice
+asa-syslog.log	11	asa	113005	2025-10-30T11:12:30.0000000	rejected	203.0.113.77					*****				AAA user authentication Rejected : reason = AAA failure : server = 192.0.2.10 : user = ***** : user IP = 203.0.113.77
+asa-syslog.log	12	asa	113015	2025-10-30T11:12:41.0000000	rejected	203.0.113.78					bob				AAA user authentication Rejected : reason = Invalid password : local database : user = bob : user IP = 203.0.113.78
+asa-syslog.log	13	asa	113039	2025-10-30T11:20:00.0000000Z	started	198.51.100.23					alice				Group <GP-Staff> User <alice> IP <198.51.100.23> AnyConnect parent session started.
+asa-syslog.log	14	asa	722022	2025-10-30T11:20:01.0000000Z	established	198.51.100.23				TCP	alice				Group <GP-Staff> User <alice> IP <198.51.100.23> TCP SVC connection established without compression
+asa-syslog.log	15	asa	722023	2025-10-30T12:45:13.0000000Z	terminated	198.51.100.23				TCP	alice				Group <GP-Staff> User <alice> IP <198.51.100.23> TCP SVC connection terminated without compression
+asa-syslog.log	16	asa	722037	2025-10-30T12:45:13.0000000Z	closing	198.51.100.23					alice				Group <GP-Staff> User <alice> IP <198.51.100.23> SVC closing connection: User Requested.
+asa-syslog.log	17	asa	716001	2025-10-30T13:00:02.0000000Z	started	198.51.100.40					carol				Group <Clientless> User <carol> IP <198.51.100.40> WebVPN session started.
+asa-syslog.log	18	asa	716002	2025-10-30T13:30:44.0000000Z	terminated	198.51.100.40					carol				Group <Clientless> User <carol> IP <198.51.100.40> WebVPN session terminated: User Requested.
+asa-syslog.log	19	asa	605004	2025-10-30T14:01:09.0000000	denied	203.0.113.66	40022	192.0.2.1			root	ssh		asa-edge-01	Login denied from 203.0.113.66/40022 to outside:192.0.2.1/ssh for user "root"
+asa-syslog.log	20	asa	605005	2025-10-30T14:02:51.0000000	permitted	198.51.100.7	50322	192.0.2.1			admin	https		asa-edge-01	Login permitted from 198.51.100.7/50322 to management:192.0.2.1/https for user "admin"
+asa-syslog.log	21	asa	111010	2025-10-30T14:03:20.0000000	executed	198.51.100.7					admin	CLI		asa-edge-01	User 'admin', running 'CLI' from IP 198.51.100.7, executed 'username backup password ***** privilege 15'
+asa-syslog.log	22	asa	502101	2025-10-30T14:03:20.0000000	added						backup			asa-edge-01	New user added to local dbase: Uname: backup Priv: 15 Encpass: *****
+asa-syslog.log	23	asa	611103	2025-10-30T14:09:58.0000000	logged out						admin			asa-edge-01	User logged out: Uname: admin
+asa-syslog.log	24	asa	733100	2025-10-30T14:10:00.0000000										asa-edge-01	[ Scanning] drop rate-1 exceeded. Current burst rate is 12 per second, max configured rate is 10; Current average rate is 9 per second, max configured rate is 5; Cumulative total count is 5432
+fortigate-download.csv	1	fortigate	traffic/forward	2024-01-06T07:15:02.4488120Z	accept	192.0.2.21	50999	198.51.100.120	22	6	alice	SSH	Admin-SSH	FG100E-EDGE	
+fortigate-download.csv	2	fortigate	event/vpn	2024-01-06T07:17:45.0000000Z	ssl-login-fail	203.0.113.78					admin			FG100E-EDGE	SSL user failed to logged in, permission denied
+fortigate-download.csv	3	fortigate	utm/webfilter	2024-01-06T08:20:11.0000000	blocked	192.0.2.30	50410	198.51.100.67	443	6		HTTPS	12	FG100E-EDGE	URL belongs to a denied category, in policy
+fortigate-kv.log	1	fortigate	traffic/forward	2024-01-05T09:22:33.1234567Z	close	192.0.2.21	51234	198.51.100.9	443	6	alice	HTTPS	LAN-to-WAN	FG100E-EDGE	
+fortigate-kv.log	2	fortigate	traffic/local	2024-01-05T09:25:02.0000000Z	deny	203.0.113.66	40022	203.0.113.1	22	6		SSH	0	FG100E-EDGE	
+fortigate-kv.log	3	fortigate	event/system	2024-01-05T09:26:40.5120000Z	login	203.0.113.66		203.0.113.1			root			FG100E-EDGE	Administrator root login failed from ssh(203.0.113.66) because of invalid user name
+fortigate-kv.log	4	fortigate	event/vpn	2024-01-05T09:31:12.0000000Z	ssl-login-fail	203.0.113.77					bob			FG100E-EDGE	SSL user failed to logged in
+fortigate-kv.log	5	fortigate	event/vpn	2024-01-05T09:33:47.0000000Z	tunnel-up	198.51.100.23					alice			FG100E-EDGE	SSL tunnel established
+fortigate-kv.log	6	fortigate	event/user	2024-01-05T10:35:00.0000000	authentication	192.0.2.44		192.0.2.10			carol		0	FG100E-EDGE	User carol succeeded in authentication
+fortigate-kv.log	7	fortigate	utm/virus	2024-01-05T09:40:19.7741122Z	blocked	192.0.2.21	50110	198.51.100.80	80	6	alice	HTTP	12	FG100E-EDGE	File is infected.
+fortigate-kv.log	8	fortigate	utm/webfilter	2024-01-05T09:41:55.0000000Z	blocked	192.0.2.21	50120	198.51.100.66	443	6	alice	HTTPS	12	FG100E-EDGE	URL belongs to a denied category in policy
+fortigate-kv.log	9	fortigate	utm/ips	2024-01-05T09:44:08.0000000Z	dropped	203.0.113.99	44120	192.0.2.80	443	6		HTTPS	7	FG100E-EDGE	applications3: Apache.Log4j.Error.Log.Remote.Code.Execution,
+fortigate-kv.log	10	fortigate	utm/app-ctrl	2024-01-05T09:47:30.0000000Z	block	192.0.2.30	50400	198.51.100.90	9001	6		Tor	12	FG100E-EDGE	Proxy: Tor,
+panos-syslog.log	1	panos	CONFIG/0	2024-03-05T09:15:22.5170000Z	Succeeded	198.51.100.25					admin			PA-EDGE-01	vsys  vsys1 rulebase security rules  allow-any
+panos-syslog.log	2	panos	CONFIG/0	2024-03-05T10:16:40.0000000	Submitted	198.51.100.25					admin			PA-EDGE-01	
+panos-syslog.log	3	panos	SYSTEM/auth	2024-03-05T09:02:11.0040000Z										PA-EDGE-01	failed authentication for user 'root'.   Reason: Invalid username/password. From: 203.0.113.66.
+panos-syslog.log	4	panos	SYSTEM/globalprotect	2024-03-05T10:03:40.0000000										PA-EDGE-01	GlobalProtect gateway client configuration generated. User name: alice, Private IP: 10.10.0.5, Client version: 6.2.1, Device name: LAPTOP-ALICE, Client OS version: Microsoft Windows 11 Pro , 64-bit, VPN type: Device Level VPN.
+panos-syslog.log	5	panos	GLOBALPROTECT/0	2024-03-05T09:03:39.2680000Z	success	198.51.100.23					alice			PA-EDGE-01	
+panos-syslog.log	6	panos	GLOBALPROTECT/0	2024-03-05T09:09:57.8800000Z	failure	203.0.113.70					mallory			PA-EDGE-01	
+panos-syslog.log	7	panos	AUTHENTICATION/0	2024-03-05T09:20:05.1120000Z	auth-success	192.0.2.44					bob		mfa-for-admin	PA-EDGE-01	MFA push accepted, second factor
+panos-syslog.log	8	panos	TRAFFIC/drop	2019-11-02T03:14:15.0000000	deny	203.0.113.150	41022	192.0.2.80	3389	tcp		not-applicable	deny-inbound	PA-OLD-02	
+panos-syslog.log	9	panos	HIPMATCH/0	2024-03-05T10:30:00.0000000										007951000123456	
+panos-threat-export.csv	2	panos	THREAT/file	2024-03-05T10:05:44.1200000Z	alert	198.51.100.200	80	192.0.2.21	50102	tcp		web-browsing	allow-web	PA-EDGE-01	invoice "March".exe
+panos-threat-export.csv	3	panos	THREAT/vulnerability	2024-03-05T10:07:10.5510000Z	reset-both	203.0.113.99	44120	192.0.2.80	443	tcp		web-browsing	dmz-web	PA-EDGE-01	Apache Log4j Remote Code Execution Vulnerability(91991)
+panos-traffic-export.csv	2	panos	TRAFFIC/end	2024-03-05T11:00:01.0000000	allow	192.0.2.21	50100	198.51.100.200	443	tcp	corp\alice	ssl	allow-web	PA-EDGE-01	
+panos-traffic-export.csv	3	panos	TRAFFIC/deny	2024-03-05T11:02:15.0000000	reset-both	192.0.2.30	51800	203.0.113.99	21	tcp		ftp	block-exfil, outbound	PA-EDGE-01	

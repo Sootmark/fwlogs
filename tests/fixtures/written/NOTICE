@@ -1,0 +1,23 @@
+The files here were written for these tests, after the vendors' public
+documentation of their formats, with example addresses (RFC 5737) and
+made-up names and identifiers:
+
+- panos-syslog.log: PAN-OS CONFIG, SYSTEM, GLOBALPROTECT and AUTHENTICATION
+  syslog lines in PAN-OS 11.1's field order, an older TRAFFIC line that
+  stops early, and a HIPMATCH line (a type read by its common fields only),
+  behind RFC 5424 and RFC 3164 headers or none;
+- panos-traffic-export.csv, panos-threat-export.csv: CSV exports as the
+  web interface writes them, a header row naming the columns;
+- fortigate-kv.log: FortiGate key=value lines (traffic forward and local,
+  an admin login, SSL-VPN login and tunnel, user authentication, antivirus,
+  web filter, IPS and application control), eventtime in seconds,
+  milliseconds, microseconds and nanoseconds, or date and time with and
+  without tz;
+- fortigate-download.csv: FortiGate's CSV log download, one key=value per
+  cell, quoted or not;
+- asa-syslog.log: Cisco ASA messages the open samples lack (connections
+  built outbound and torn down, access group and access list denials, AAA,
+  AnyConnect and WebVPN sessions, admin logins and logout, a user added,
+  an id this crate doesn't read), with each timestamp form.
+
+Under this crate's licences.
